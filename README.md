@@ -90,4 +90,16 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/LisaHusband/LeetCode_/tree/master/0003-longest-substring-without-repeating-characters) |
+## Array
+|  |
+| ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
+## Binary Search
+|  |
+| ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
 <!---LeetCode Topics End-->
