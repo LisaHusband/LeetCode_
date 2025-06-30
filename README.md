@@ -74,6 +74,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/LisaHusband/LeetCode_/tree/master/0002-add-two-numbers) |
+| [0007-reverse-integer](https://github.com/LisaHusband/LeetCode_/tree/master/0007-reverse-integer) |
 ## Recursion
 |  |
 | ------- |
