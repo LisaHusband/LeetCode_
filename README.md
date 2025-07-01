@@ -101,6 +101,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
+| [0011-container-with-most-water](https://github.com/LisaHusband/LeetCode_/tree/master/0011-container-with-most-water) |
 ## Binary Search
 |  |
 | ------- |
@@ -113,9 +114,14 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/LisaHusband/LeetCode_/tree/master/0005-longest-palindromic-substring) |
+| [0011-container-with-most-water](https://github.com/LisaHusband/LeetCode_/tree/master/0011-container-with-most-water) |
 ## Dynamic Programming
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/LisaHusband/LeetCode_/tree/master/0005-longest-palindromic-substring) |
 | [0010-regular-expression-matching](https://github.com/LisaHusband/LeetCode_/tree/master/0010-regular-expression-matching) |
+## Greedy
+|  |
+| ------- |
+| [0011-container-with-most-water](https://github.com/LisaHusband/LeetCode_/tree/master/0011-container-with-most-water) |
 <!---LeetCode Topics End-->
