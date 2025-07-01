@@ -5,43 +5,52 @@ public:
         Time Complexity: O(m * n)
         Space Complexity: O(m * n)
         Where m = len(s), n = len(p)
-    **/
-    bool isMatch(string s, string p) {
-        // 快速剪枝：如果模式仅是 ".*"，必匹配任意字符串
+        // 快速剪枝1：如果模式仅是 ".*"，必匹配任意字符串
         if (p == ".*") return true;
+    **/
+        
+    bool isMatch(string s, string p) {
+        if (p == ".*") return true;
+        const int MAXN = 20; // 假设模式长度最大100
         int m = s.size(), n = p.size();
-        vector<bool> dp(n + 1, false);
-        dp[0] = true;  // 空字符串与空模式匹配
+        bitset<MAXN + 1> dp_current, dp_prev;
+        dp_prev.set(0);  // dp[0][0] = true
 
-        // 处理空字符串与模式匹配的初始化（a*, a*b* 等）
+        // 初始化空字符串与模式匹配
         for (int j = 2; j <= n; j += 2) {
-            if (p[j - 1] == '*' && dp[j - 2]) {
-                dp[j] = true;
+            if (p[j - 1] == '*' && dp_prev[j - 2]) {
+                dp_prev.set(j);
             }
         }
 
         for (int i = 1; i <= m; ++i) {
-            bool prev = dp[0];  // dp[i-1][j-1] 的前一个状态，初始对应 dp[0][0]
-            dp[0] = false;       // 空模式不能匹配非空字符串
+            dp_current.reset();
+            // dp[i][0] = false (空模式不匹配非空字符串)
 
+            bool prev = dp_prev[0]; // dp[i-1][j-1]
             for (int j = 1; j <= n; ++j) {
-                bool temp = dp[j];  // 保存 dp[i-1][j]，下一步计算要用
+                bool temp = dp_prev[j]; // dp[i-1][j]
                 if (p[j - 1] == '.' || p[j - 1] == s[i - 1]) {
-                    dp[j] = prev;
+                    if (prev) dp_current.set(j);
+                    else dp_current.reset(j);
                 }
                 else if (p[j - 1] == '*') {
-                    dp[j] = dp[j - 2];  // '*' 表示0次
+                    bool zeroOccur = dp_current[j - 2]; // dp[i][j-2]
+                    bool oneOrMoreOccur = false;
                     if (p[j - 2] == '.' || p[j - 2] == s[i - 1]) {
-                        dp[j] = dp[j] || temp;  // '*' 表示1次或多次
+                        oneOrMoreOccur = temp; // dp[i-1][j]
                     }
+                    if (zeroOccur || oneOrMoreOccur) dp_current.set(j);
+                    else dp_current.reset(j);
                 }
                 else {
-                    dp[j] = false;
+                    dp_current.reset(j);
                 }
-                prev = temp;  // 更新 prev，为下一 j 循环保存 dp[i-1][j-1]
+                prev = temp;
             }
+            dp_prev = dp_current; // 下一行
         }
 
-        return dp[n];
+        return dp_prev[n];
     }
 };
