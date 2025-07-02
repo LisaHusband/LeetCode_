@@ -110,6 +110,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
 | [0011-container-with-most-water](https://github.com/LisaHusband/LeetCode_/tree/master/0011-container-with-most-water) |
 | [0014-longest-common-prefix](https://github.com/LisaHusband/LeetCode_/tree/master/0014-longest-common-prefix) |
+| [0015-3sum](https://github.com/LisaHusband/LeetCode_/tree/master/0015-3sum) |
 ## Binary Search
 |  |
 | ------- |
@@ -123,6 +124,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/LisaHusband/LeetCode_/tree/master/0005-longest-palindromic-substring) |
 | [0011-container-with-most-water](https://github.com/LisaHusband/LeetCode_/tree/master/0011-container-with-most-water) |
+| [0015-3sum](https://github.com/LisaHusband/LeetCode_/tree/master/0015-3sum) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -136,4 +138,8 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/LisaHusband/LeetCode_/tree/master/0014-longest-common-prefix) |
+## Sorting
+|  |
+| ------- |
+| [0015-3sum](https://github.com/LisaHusband/LeetCode_/tree/master/0015-3sum) |
 <!---LeetCode Topics End-->
