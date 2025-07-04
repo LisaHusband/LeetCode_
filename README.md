@@ -101,6 +101,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0017-letter-combinations-of-a-phone-number](https://github.com/LisaHusband/LeetCode_/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0030-substring-with-concatenation-of-all-words](https://github.com/LisaHusband/LeetCode_/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0036-valid-sudoku](https://github.com/LisaHusband/LeetCode_/tree/master/0036-valid-sudoku) |
+| [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 ## String
 |  |
 | ------- |
@@ -139,6 +140,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/LisaHusband/LeetCode_/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0035-search-insert-position](https://github.com/LisaHusband/LeetCode_/tree/master/0035-search-insert-position) |
 | [0036-valid-sudoku](https://github.com/LisaHusband/LeetCode_/tree/master/0036-valid-sudoku) |
+| [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 ## Binary Search
 |  |
 | ------- |
@@ -190,6 +192,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/LisaHusband/LeetCode_/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0022-generate-parentheses](https://github.com/LisaHusband/LeetCode_/tree/master/0022-generate-parentheses) |
+| [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 ## Stack
 |  |
 | ------- |
@@ -215,4 +218,5 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/LisaHusband/LeetCode_/tree/master/0036-valid-sudoku) |
+| [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 <!---LeetCode Topics End-->
