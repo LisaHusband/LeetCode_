@@ -1,68 +1,87 @@
-#include <vector>
-#include <iostream>
-#include <bitset>
-using namespace std;
-
+/**
+作者：Ikaruga
+链接：https://leetcode.cn/problems/sudoku-solver/solutions/155521/37-by-ikaruga/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+**/
 class Solution {
 public:
-    bool isValid(vector<vector<char>>& board, int row, int col, char num, 
-                  vector<bitset<9>>& rowMask, vector<bitset<9>>& colMask, vector<bitset<9>>& boxMask) {
-        int numBit = num - '1';  // 把数字转换为对应的位，'1' -> 0, '2' -> 1, ..., '9' -> 8
-
-        // 检查该数字在当前行、列和子宫是否已经出现
-        if (rowMask[row][numBit] || colMask[col][numBit] || boxMask[(row / 3) * 3 + col / 3][numBit])
-            return false;
-
-        return true;
+    bitset<9> getPossibleStatus(int x, int y)
+    {
+        return ~(rows[x] | cols[y] | cells[x / 3][y / 3]);
     }
 
-    bool solve(vector<vector<char>>& board, 
-                     vector<bitset<9>>& rowMask, vector<bitset<9>>& colMask, vector<bitset<9>>& boxMask) {
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (board[row][col] == '.') {
-                    // 尝试所有数字1-9
-                    for (char num = '1'; num <= '9'; num++) {
-                        if (isValid(board, row, col, num, rowMask, colMask, boxMask)) {
-                            board[row][col] = num;
-                            int numBit = num - '1';
-                            rowMask[row].set(numBit);  // 更新行的状态
-                            colMask[col].set(numBit);  // 更新列的状态
-                            boxMask[(row / 3) * 3 + col / 3].set(numBit);  // 更新子宫的状态
-
-                            // 递归填充下一个空格
-                            if (solve(board, rowMask, colMask, boxMask))
-                                return true;
-                            
-                            // 回溯
-                            board[row][col] = '.';
-                            rowMask[row].reset(numBit);  // 回退行的状态
-                            colMask[col].reset(numBit);  // 回退列的状态
-                            boxMask[(row / 3) * 3 + col / 3].reset(numBit);  // 回退子宫的状态
-                        }
-                    }
-                    return false;  // 如果没有找到合适的数字，回溯
-                }
+    vector<int> getNext(vector<vector<char>>& board)
+    {
+        vector<int> ret;
+        int minCnt = 10;
+        for (int i = 0; i < board.size(); i++)
+        {
+            for (int j = 0; j < board[i].size(); j++)
+            {
+                if (board[i][j] != '.') continue;
+                auto cur = getPossibleStatus(i, j);
+                if (cur.count() >= minCnt) continue;
+                ret = { i, j };
+                minCnt = cur.count();
             }
         }
-        return true;  // 所有格子已填满
+        return ret;
     }
 
-    void solveSudoku(vector<vector<char>>& board) {
-        vector<bitset<9>> rowMask(9), colMask(9), boxMask(9);
-
-        // 初始化已有的数字的位集合状态
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (board[row][col] != '.') {
-                    int numBit = board[row][col] - '1';
-                    rowMask[row].set(numBit);
-                    colMask[col].set(numBit);
-                    boxMask[(row / 3) * 3 + col / 3].set(numBit);
-                }
-            }
+        void fillNum(int x, int y, int n, bool fillFlag)
+        {
+            bitset<9> pick(1 << n);
+            rows[x] = (fillFlag) ? (rows[x] | pick) : (rows[x] ^ pick);
+            cols[y] = (fillFlag) ? (cols[y] | pick) : (cols[y] ^ pick);
+            cells[x / 3][y / 3] = (fillFlag) ? (cells[x / 3][y / 3] | pick) : (cells[x / 3][y / 3] ^ pick);
         }
 
-        solve(board, rowMask, colMask, boxMask);
+
+    
+    bool dfs(vector<vector<char>>& board, int cnt)
+    {
+        if (cnt == 0) return true;
+
+        auto next = getNext(board);
+        auto bits = getPossibleStatus(next[0], next[1]);
+        for (int n = 0; n < bits.size(); n++)
+        {
+            if (!bits.test(n)) continue;
+            fillNum(next[0], next[1], n, true);
+            board[next[0]][next[1]] = n + '1';
+            if (dfs(board, cnt - 1)) return true;
+            board[next[0]][next[1]] = '.';
+            fillNum(next[0], next[1], n, false);
+        }
+        return false;
     }
+
+    void solveSudoku(vector<vector<char>>& board) 
+    {
+        rows = vector<bitset<9>>(9, bitset<9>());
+        cols = vector<bitset<9>>(9, bitset<9>());
+        cells = vector<vector<bitset<9>>>(3, vector<bitset<9>>(3, bitset<9>()));
+
+        int cnt = 0;
+        for (int i = 0; i < board.size(); i++)
+        {
+            for (int j = 0; j < board[i].size(); j++)
+            {
+                cnt += (board[i][j] == '.');
+                if (board[i][j] == '.') continue;
+                int n = board[i][j] - '1';
+                rows[i] |= (1 << n);
+                cols[j] |= (1 << n);
+                cells[i / 3][j / 3] |= (1 << n);
+            }
+        }
+        dfs(board, cnt);
+    }
+
+private:
+    vector<bitset<9>> rows;
+    vector<bitset<9>> cols;
+    vector<vector<bitset<9>>> cells;
 };
+
