@@ -5,7 +5,7 @@ class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
         const int n = s.size(), m = words.size(), w = words[0].size();
-        if (m>2000){
+        if (m>1000){
             // 将 words 中的元素放入 set，检查是否只包含一个单词
             unordered_set<string> wordss(words.begin(), words.end());
 
