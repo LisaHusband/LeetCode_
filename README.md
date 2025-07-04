@@ -143,6 +143,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0036-valid-sudoku](https://github.com/LisaHusband/LeetCode_/tree/master/0036-valid-sudoku) |
 | [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 | [0039-combination-sum](https://github.com/LisaHusband/LeetCode_/tree/master/0039-combination-sum) |
+| [0040-combination-sum-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0040-combination-sum-ii) |
 ## Binary Search
 |  |
 | ------- |
@@ -196,6 +197,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0022-generate-parentheses](https://github.com/LisaHusband/LeetCode_/tree/master/0022-generate-parentheses) |
 | [0037-sudoku-solver](https://github.com/LisaHusband/LeetCode_/tree/master/0037-sudoku-solver) |
 | [0039-combination-sum](https://github.com/LisaHusband/LeetCode_/tree/master/0039-combination-sum) |
+| [0040-combination-sum-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0040-combination-sum-ii) |
 ## Stack
 |  |
 | ------- |
