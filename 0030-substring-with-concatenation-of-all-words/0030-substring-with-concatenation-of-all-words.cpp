@@ -5,24 +5,26 @@ class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
         const int n = s.size(), m = words.size(), w = words[0].size();
-        // 将 words 中的元素放入 set，检查是否只包含一个单词
-        unordered_set<string> wordss(words.begin(), words.end());
+        if (m>5000){
+            // 将 words 中的元素放入 set，检查是否只包含一个单词
+            unordered_set<string> wordss(words.begin(), words.end());
 
-        // 如果 wordss 中只有一个元素，检查 s 是否只包含一个字符
-        if (wordss.size() == 1){
-            unordered_set<char> char_set(s.begin(), s.end());  // 将字符串转为 set 用于判断是否只有一个不同字符
-            if (char_set.size() == 1) {
-                // 如果 s 中的字符只有一个，并且 wordss 中的唯一元素在 s 中
-                if (s.find(*wordss.begin()) != string::npos) {
-                    vector<int> result;
-                    // 返回满足条件的索引
-                    for (int i = 0; i <= n - w*m; ++i) {
-                        result.push_back(i);
+            // 如果 wordss 中只有一个元素，检查 s 是否只包含一个字符
+            if (wordss.size() == 1){
+                unordered_set<char> char_set(s.begin(), s.end());  // 将字符串转为 set 用于判断是否只有一个不同字符
+                if (char_set.size() == 1) {
+                    // 如果 s 中的字符只有一个，并且 wordss 中的唯一元素在 s 中
+                    if (s.find(*wordss.begin()) != string::npos) {
+                        vector<int> result;
+                        // 返回满足条件的索引
+                        for (int i = 0; i <= n - w*m; ++i) {
+                            result.push_back(i);
+                        }
+                        return result;
                     }
-                    return result;
-                }
-                else {
-                    return {};  // 如果没有找到，返回空列表
+                    else {
+                        return {};  // 如果没有找到，返回空列表
+                    }
                 }
             }
         }
