@@ -2,8 +2,8 @@ class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         // 每个字母对应一个质数，a对应2，b对应3，... 按顺序
-        vector<int> prime = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-                             61, 67, 71, 73, 79, 83, 89, 97, 101, 103};
+        vector<int> prime = {103, 3, 2, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+                             61, 67, 71, 73, 79, 83, 89, 97, 101};
 
         unordered_map<unsigned long long, vector<string>> hash;
         
