@@ -128,6 +128,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0038-count-and-say](https://github.com/LisaHusband/LeetCode_/tree/master/0038-count-and-say) |
 | [0043-multiply-strings](https://github.com/LisaHusband/LeetCode_/tree/master/0043-multiply-strings) |
 | [0049-group-anagrams](https://github.com/LisaHusband/LeetCode_/tree/master/0049-group-anagrams) |
+| [0058-length-of-last-word](https://github.com/LisaHusband/LeetCode_/tree/master/0058-length-of-last-word) |
 ## Sliding Window
 |  |
 | ------- |
