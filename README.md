@@ -160,6 +160,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0048-rotate-image](https://github.com/LisaHusband/LeetCode_/tree/master/0048-rotate-image) |
 | [0049-group-anagrams](https://github.com/LisaHusband/LeetCode_/tree/master/0049-group-anagrams) |
 | [0051-n-queens](https://github.com/LisaHusband/LeetCode_/tree/master/0051-n-queens) |
+| [0053-maximum-subarray](https://github.com/LisaHusband/LeetCode_/tree/master/0053-maximum-subarray) |
 ## Binary Search
 |  |
 | ------- |
@@ -172,6 +173,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/LisaHusband/LeetCode_/tree/master/0004-median-of-two-sorted-arrays) |
 | [0023-merge-k-sorted-lists](https://github.com/LisaHusband/LeetCode_/tree/master/0023-merge-k-sorted-lists) |
+| [0053-maximum-subarray](https://github.com/LisaHusband/LeetCode_/tree/master/0053-maximum-subarray) |
 ## Two Pointers
 |  |
 | ------- |
@@ -195,6 +197,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0032-longest-valid-parentheses](https://github.com/LisaHusband/LeetCode_/tree/master/0032-longest-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/LisaHusband/LeetCode_/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0045-jump-game-ii) |
+| [0053-maximum-subarray](https://github.com/LisaHusband/LeetCode_/tree/master/0053-maximum-subarray) |
 ## Greedy
 |  |
 | ------- |
