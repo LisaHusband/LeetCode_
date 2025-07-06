@@ -1,13 +1,5 @@
 class Solution {
 public:
-    // 快速乘法，通过指数来优化乘法运算
-    unsigned long long multiplyFast(unsigned long long base, int prime) {
-        unsigned long long result = base;
-        for (int i = 1; i < prime; i++) {
-            result *= prime;  // 通过指数优化乘法
-        }
-        return result;
-    }
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         // 每个字母对应一个质数，a对应2，b对应3，... 按顺序
         vector<int> prime = {107, 3, 2, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53, 59,
