@@ -6,13 +6,13 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> result;
-        // 预分配内存，最坏情况下，每次外层循环都会找到一个三元组
-        result.reserve(nums.size() / 3);  // 根据输入数组的大小预分配内存
+        
         
         sort(nums.begin(), nums.end());  // 排序
         
         int n = nums.size();
-        
+        // 预分配内存，最坏情况下，每次外层循环都会找到一个三元组
+        result.reserve(n/3);  // 根据输入数组的大小预分配内存
 
         int *start = &nums[0], *end = &nums[n - 1]; // 使用指针代替索引
         
