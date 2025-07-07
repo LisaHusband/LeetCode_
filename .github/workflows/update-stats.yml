@@ -24,12 +24,6 @@ jobs:
 
           echo "SOLVED=$SOLVED" >> $GITHUB_ENV
           echo "UNSOLVED=$UNSOLVED" >> $GITHUB_ENV
-
-      - name: Update README with stats
-        run: |
-          # 使用 GitHub API 更新 README 文件，替换以下徽章值
-          sed -i "s/Solved-[0-9]\+/Solved-${{ env.SOLVED }}/g" README.md
-          sed -i "s/Unsolved-[0-9]\+/Unsolved-${{ env.UNSOLVED }}/g" README.md
           
       - name: Commit and push changes
         run: |
