@@ -1,3 +1,5 @@
+![LeetCode Solved](https://img.shields.io/badge/Solved-78-brightgreen)
+![LeetCode Unsolved](https://img.shields.io/badge/Unsolved-3532-red)
 
 
 ## 🧠 LeetCode High-Performance Solutions
