@@ -133,6 +133,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0043-multiply-strings](https://github.com/LisaHusband/LeetCode_/tree/master/0043-multiply-strings) |
 | [0049-group-anagrams](https://github.com/LisaHusband/LeetCode_/tree/master/0049-group-anagrams) |
 | [0058-length-of-last-word](https://github.com/LisaHusband/LeetCode_/tree/master/0058-length-of-last-word) |
+| [0065-valid-number](https://github.com/LisaHusband/LeetCode_/tree/master/0065-valid-number) |
 ## Sliding Window
 |  |
 | ------- |
