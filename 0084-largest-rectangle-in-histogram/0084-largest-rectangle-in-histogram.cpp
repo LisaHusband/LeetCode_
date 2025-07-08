@@ -1,24 +1,45 @@
+#include <vector>
+#include <algorithm>
+using namespace std;
+
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
-        heights.push_back(0); // 哨兵柱，用于清空栈
-        const int* begin = heights.data();
-        const int* end = begin + heights.size();
+        int n = heights.size();
+        if (n == 0) return 0;
 
-        stack<const int*> st;  // 存储指针而非索引
-        int max_area = 0;
+        vector<int> shortFromLeft(n);   // 左边第一个比当前小的柱子下标
+        vector<int> shortFromRight(n);  // 右边第一个比当前小的柱子下标
 
-        for (const int* p = begin; p < end; ++p) {
-            while (!st.empty() && *st.top() > *p) {
-                const int* h_ptr = st.top();
-                st.pop();
-                const int* l_ptr = st.empty() ? begin - 1 : st.top();
-                int width = p - l_ptr - 1;
-                max_area = max(max_area, (*h_ptr) * width);
+        shortFromLeft[0] = -1;
+        shortFromRight[n - 1] = n;
+
+        // 计算每个柱子左边第一个比它矮的位置
+        for (int i = 1; i < n; ++i) {
+            int p = i - 1;
+            while (p >= 0 && heights[p] >= heights[i]) {
+                p = shortFromLeft[p];
             }
-            st.push(p);
+            shortFromLeft[i] = p;
         }
 
-        return max_area;
+        // 计算每个柱子右边第一个比它矮的位置
+        for (int i = n - 2; i >= 0; --i) {
+            int p = i + 1;
+            while (p < n && heights[p] >= heights[i]) {
+                p = shortFromRight[p];
+            }
+            shortFromRight[i] = p;
+        }
+
+        // 计算最大面积
+        int maxArea = 0;
+        for (int i = 0; i < n; ++i) {
+            int width = shortFromRight[i] - shortFromLeft[i] - 1;
+            int area = heights[i] * width;
+            maxArea = max(maxArea, area);
+        }
+
+        return maxArea;
     }
 };
