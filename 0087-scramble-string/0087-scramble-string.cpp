@@ -1,47 +1,81 @@
+#include <iostream>
+#include <unordered_map>
+#include <string>
+#include <vector>
+
+using namespace std;
+
 class Solution {
 public:
-    bool isScramble(string s1, string s2) 
-    {
+        unordered_map<string, bool> sta; // 记忆化存储
 
-      if(s1.length()==0 && s2.length()==0)
-          return true;
-        if(s1.length()==0 || s2.length()==0)
-          return false;
-        if(s1.length() != s2.length())
-          return false;
-        if(s1 == s2)
-          return true;
+bool check(string s1, string s2) {
+            if (s1.size() != s2.size()) {
+                return false;
+            }
+            if (s1.size() <= 1) {
+                return s1 == s2;
+            }
 
-      int n = s1.size();
-      vector<vector<vector<bool> > > dp(n+1, vector<vector<bool> >(n, vector<bool>(n,false)));
-      for(int i = 0; i < n; ++i) 
-      {
-        for(int j = 0; j < n; ++j)  
-          dp[1][i][j] = s1[i] == s2[j];  
-      }
-      for(int len = 2; len <= n; ++len) 
-      {
-        for(int i = 0; i <= n-len; ++i)
-        {
-          for(int j = 0; j <= n-len; ++j) 
-          {
-            //注意这里的递归公式中i,j求解的顺序没有要求，但是len的顺序必须从小到大
-            for(int k = 1; k < len; ++k)
-            {
-              if((dp[k][i][j] && dp[len - k][i+k][j+k]) || (dp[k][i][j+len-k] && dp[len-k][i+k][j])) 
-                {
-                  dp[len][i][j] = true;
-                  break;
+            if (sta.find(s1 + s2) != sta.end()) {
+                return sta[s1 + s2];
+            }
+
+            // from left to right
+            unordered_map<char, int> mem;
+            for (int i = 0; i < s1.size(); ++i) {
+                mem[s1[i]]++;
+                mem[s2[i]]--;
+
+                bool is_valid = true;
+                for (auto &entry : mem) {
+                    if (entry.second != 0) {
+                        is_valid = false;
+                        break;
+                    }
+                }
+
+                if (is_valid) {
+                    if (i != s1.size() - 1) {
+                        if (check(s1.substr(0, i + 1), s2.substr(0, i + 1)) && check(s1.substr(i + 1), s2.substr(i + 1))) {
+                            sta[s1 + s2] = true;
+                            return true;
+                        }
+                    }
                 }
             }
-              
-          }
 
+            // from right to left
+            mem.clear();
+            for (int i = 0; i < s1.size(); ++i) {
+                mem[s1[i]]++;
+                mem[s2[s2.size() - i - 1]]--;
+
+                bool is_valid = true;
+                for (auto &entry : mem) {
+                    if (entry.second != 0) {
+                        is_valid = false;
+                        break;
+                    }
+                }
+
+                if (is_valid) {
+                    if (i != s1.size() - 1) {
+                        if (check(s1.substr(0, i + 1), s2.substr(s2.size() - i - 1)) && check(s1.substr(i + 1), s2.substr(0, s2.size() - i - 1))) {
+                            sta[s1 + s2] = true;
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            sta[s1 + s2] = false;
+            return false;
         }
+    bool isScramble(string ss1, string ss2) {
 
-      }
+        
 
-      return dp[n][0][0]; 
-
+        return check(ss1, ss2);
     }
 };
