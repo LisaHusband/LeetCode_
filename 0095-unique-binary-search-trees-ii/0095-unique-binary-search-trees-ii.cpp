@@ -9,20 +9,6 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-// // 定义二叉树节点类
-// class TreeNode {
-// public:
-//     int val;
-//     TreeNode* left;
-//     TreeNode* right;
-//     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-// };
-
 class Solution {
 public:
     vector<TreeNode*> generateTrees(int n) {
@@ -58,20 +44,4 @@ public:
         return allTrees;
     }
 };
-
-// 辅助函数：打印树结构
-void printTree(TreeNode* root) {
-    if (root == nullptr) {
-        cout << "None";
-        return;
-    }
-    cout << "(" << root->val;
-    if (root->left || root->right) {
-        cout << ", ";
-        printTree(root->left);
-        cout << ", ";
-        printTree(root->right);
-    }
-    cout << ")";
-}
 
