@@ -10,3 +10,4 @@ class Solution:
         
         # 返回排序后的子集列表
         return [list(comb) for comb in sorted(res)]
+        
