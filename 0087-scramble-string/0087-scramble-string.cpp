@@ -1,60 +1,47 @@
-#include <string>
-#include <unordered_map>
-#include <algorithm>
-
-using namespace std;
-
 class Solution {
-    unordered_map<string, bool> memo;
-
-    // 拼接两个字符串作为key
-    string makeKey(const string& s1, const string& s2) {
-        return s1 + "#" + s2;
-    }
-
 public:
-    bool isScramble(string s1, string s2) {
-        return partly(s1, s2);
-    }
+    bool isScramble(string s1, string s2) 
+    {
 
-    bool partly(const string& s1_part, const string& s2_part) {
-        string key = makeKey(s1_part, s2_part);
-        if (memo.count(key)) return memo[key];
+      if(s1.length()==0 && s2.length()==0)
+          return true;
+        if(s1.length()==0 || s2.length()==0)
+          return false;
+        if(s1.length() != s2.length())
+          return false;
+        if(s1 == s2)
+          return true;
 
-        if (s1_part == s2_part) {
-            memo[key] = true;
-            return true;
-        }
-
-        // 字符异序快速剪枝
-        string sorted_s1 = s1_part, sorted_s2 = s2_part;
-        sort(sorted_s1.begin(), sorted_s1.end());
-        sort(sorted_s2.begin(), sorted_s2.end());
-        if (sorted_s1 != sorted_s2) {
-            memo[key] = false;
-            return false;
-        }
-
-        int n = s1_part.size();
-        for (int i = 1; i < n; i++) {
-            // 交换情况
-            if (partly(s1_part.substr(0, i), s2_part.substr(n - i, i)) &&
-                partly(s1_part.substr(i), s2_part.substr(0, n - i))) {
-                memo[key] = true;
-                return true;
+      int n = s1.size();
+      vector<vector<vector<bool> > > dp(n+1, vector<vector<bool> >(n, vector<bool>(n,false)));
+      for(int i = 0; i < n; ++i) 
+      {
+        for(int j = 0; j < n; ++j)  
+          dp[1][i][j] = s1[i] == s2[j];  
+      }
+      for(int len = 2; len <= n; ++len) 
+      {
+        for(int i = 0; i <= n-len; ++i)
+        {
+          for(int j = 0; j <= n-len; ++j) 
+          {
+            //注意这里的递归公式中i,j求解的顺序没有要求，但是len的顺序必须从小到大
+            for(int k = 1; k < len; ++k)
+            {
+              if((dp[k][i][j] && dp[len - k][i+k][j+k]) || (dp[k][i][j+len-k] && dp[len-k][i+k][j])) 
+                {
+                  dp[len][i][j] = true;
+                  break;
+                }
             }
+              
+          }
+
         }
 
-        for (int i = 1; i < n; i++) {
-            // 不交换情况
-            if (partly(s1_part.substr(0, i), s2_part.substr(0, i)) &&
-                partly(s1_part.substr(i), s2_part.substr(i))) {
-                memo[key] = true;
-                return true;
-            }
-        }
+      }
 
-        memo[key] = false;
-        return false;
+      return dp[n][0][0]; 
+
     }
 };
