@@ -8,8 +8,8 @@ public:
         int n = heights.size();
         if (n == 0) return 0;
 
-        vector<int> shortFromLeft(n);   // 左边第一个比当前小的柱子下标
-        vector<int> shortFromRight(n);  // 右边第一个比当前小的柱子下标
+        int* shortFromLeft = new int[n];   // 左边第一个比当前小的柱子下标
+        int* shortFromRight = new int[n];  // 右边第一个比当前小的柱子下标
 
         shortFromLeft[0] = -1;
         shortFromRight[n - 1] = n;
@@ -39,6 +39,10 @@ public:
             int area = heights[i] * width;
             maxArea = max(maxArea, area);
         }
+
+        // 释放动态分配的内存
+        delete[] shortFromLeft;
+        delete[] shortFromRight;
 
         return maxArea;
     }
