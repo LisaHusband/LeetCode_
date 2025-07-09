@@ -226,6 +226,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0118-pascals-triangle](https://github.com/LisaHusband/LeetCode_/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0119-pascals-triangle-ii) |
 | [0120-triangle](https://github.com/LisaHusband/LeetCode_/tree/master/0120-triangle) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/LisaHusband/LeetCode_/tree/master/0121-best-time-to-buy-and-sell-stock) |
 ## Binary Search
 |  |
 | ------- |
@@ -293,6 +294,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0118-pascals-triangle](https://github.com/LisaHusband/LeetCode_/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0119-pascals-triangle-ii) |
 | [0120-triangle](https://github.com/LisaHusband/LeetCode_/tree/master/0120-triangle) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/LisaHusband/LeetCode_/tree/master/0121-best-time-to-buy-and-sell-stock) |
 ## Greedy
 |  |
 | ------- |
