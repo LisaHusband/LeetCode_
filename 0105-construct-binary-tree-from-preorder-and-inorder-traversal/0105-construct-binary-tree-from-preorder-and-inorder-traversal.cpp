@@ -16,26 +16,30 @@ public:
 
         unordered_map<int, int> inorder_map;
         for (int i = 0; i < inorder.size(); ++i) {
-            inorder_map[inorder[i]] = i;  // 将中序遍历的元素位置记录下来
+            inorder_map[inorder[i]] = i;  // Store the index of each element in inorder
         }
 
-        stack<TreeNode*> stack;
-        TreeNode* root = new TreeNode(preorder[0]);
-        stack.push(root);
-        int preorder_index = 1;
+        // Create pointers to iterate over the preorder and inorder arrays
+        auto preorder_ptr = preorder.begin();
+        auto inorder_ptr = inorder.begin();
 
-        for (int i = 0; i < preorder.size() - 1; ++i) {
-            int current_val = preorder[preorder_index];
+        stack<TreeNode*> stack;
+        TreeNode* root = new TreeNode(*preorder_ptr);
+        stack.push(root);
+        ++preorder_ptr;
+
+        while (preorder_ptr != preorder.end()) {
+            int current_val = *preorder_ptr;
             TreeNode* node = stack.top();
-            
-            // 根据当前值与中序位置来决定是构建左子树还是右子树
+
+            // Decide if the current value should be part of the left or right subtree
             if (inorder_map[current_val] < inorder_map[node->val]) {
-                // 如果当前值在中序遍历中在当前节点的左侧，构建左子树
+                // Left child
                 TreeNode* left_node = new TreeNode(current_val);
                 node->left = left_node;
                 stack.push(left_node);
             } else {
-                // 否则，构建右子树
+                // Right child
                 while (!stack.empty() && inorder_map[current_val] > inorder_map[stack.top()->val]) {
                     node = stack.top();
                     stack.pop();
@@ -44,8 +48,10 @@ public:
                 node->right = right_node;
                 stack.push(right_node);
             }
-            preorder_index++;
+
+            ++preorder_ptr;
         }
+
         return root;
     }
 };
