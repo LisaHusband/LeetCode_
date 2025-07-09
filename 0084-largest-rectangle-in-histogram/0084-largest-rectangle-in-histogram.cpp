@@ -41,8 +41,8 @@ public:
         }
 
         // 释放动态分配的内存
-        delete[] shortFromLeft;
-        delete[] shortFromRight;
+        // delete[] shortFromLeft;
+        // delete[] shortFromRight;
 
         return maxArea;
     }
