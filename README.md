@@ -81,6 +81,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0083-remove-duplicates-from-sorted-list](https://github.com/LisaHusband/LeetCode_/tree/master/0083-remove-duplicates-from-sorted-list) |
 | [0086-partition-list](https://github.com/LisaHusband/LeetCode_/tree/master/0086-partition-list) |
 | [0092-reverse-linked-list-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0092-reverse-linked-list-ii) |
+| [0109-convert-sorted-list-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0109-convert-sorted-list-to-binary-search-tree) |
 ## Math
 |  |
 | ------- |
@@ -237,6 +238,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/LisaHusband/LeetCode_/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/LisaHusband/LeetCode_/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+| [0109-convert-sorted-list-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0109-convert-sorted-list-to-binary-search-tree) |
 ## Two Pointers
 |  |
 | ------- |
@@ -414,6 +416,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/LisaHusband/LeetCode_/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [0107-binary-tree-level-order-traversal-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0107-binary-tree-level-order-traversal-ii) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+| [0109-convert-sorted-list-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0109-convert-sorted-list-to-binary-search-tree) |
 ## Binary Tree
 |  |
 | ------- |
@@ -431,6 +434,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0106-construct-binary-tree-from-inorder-and-postorder-traversal](https://github.com/LisaHusband/LeetCode_/tree/master/0106-construct-binary-tree-from-inorder-and-postorder-traversal) |
 | [0107-binary-tree-level-order-traversal-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0107-binary-tree-level-order-traversal-ii) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+| [0109-convert-sorted-list-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0109-convert-sorted-list-to-binary-search-tree) |
 ## Binary Search Tree
 |  |
 | ------- |
@@ -439,6 +443,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0098-validate-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0098-validate-binary-search-tree) |
 | [0099-recover-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0099-recover-binary-search-tree) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+| [0109-convert-sorted-list-to-binary-search-tree](https://github.com/LisaHusband/LeetCode_/tree/master/0109-convert-sorted-list-to-binary-search-tree) |
 ## Breadth-First Search
 |  |
 | ------- |
