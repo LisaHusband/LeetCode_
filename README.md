@@ -152,6 +152,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0072-edit-distance](https://github.com/LisaHusband/LeetCode_/tree/master/0072-edit-distance) |
 | [0076-minimum-window-substring](https://github.com/LisaHusband/LeetCode_/tree/master/0076-minimum-window-substring) |
 | [0079-word-search](https://github.com/LisaHusband/LeetCode_/tree/master/0079-word-search) |
+| [0087-scramble-string](https://github.com/LisaHusband/LeetCode_/tree/master/0087-scramble-string) |
 ## Sliding Window
 |  |
 | ------- |
@@ -259,6 +260,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0070-climbing-stairs](https://github.com/LisaHusband/LeetCode_/tree/master/0070-climbing-stairs) |
 | [0072-edit-distance](https://github.com/LisaHusband/LeetCode_/tree/master/0072-edit-distance) |
 | [0085-maximal-rectangle](https://github.com/LisaHusband/LeetCode_/tree/master/0085-maximal-rectangle) |
+| [0087-scramble-string](https://github.com/LisaHusband/LeetCode_/tree/master/0087-scramble-string) |
 ## Greedy
 |  |
 | ------- |
