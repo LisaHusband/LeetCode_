@@ -1,96 +1,90 @@
-#define x first
-#define y second
-typedef unordered_map <string,vector<string>> mymap;
-typedef unordered_set <string> myset;
-typedef queue <pair<string,int>> PII;
-
-
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <queue>
+#include <string>
+using namespace std;
 
 class Solution {
 public:
-    //& 引用就是直接使用，而不是创建副本（耗时间）
-    void trace_back(vector<string> &path,vector<vector<string>> &res,mymap &pre,string& now,string& beginword){
-        path.push_back(now);
-
-        if(now == beginword){
-            reverse(path.begin(),path.end());
-            res.push_back(path);
-            reverse(path.begin(),path.end());
-        }
-        else{
-            for(string index : pre[now]){
-                trace_back(path,res,pre,index,beginword);
-            }
-        }
-        path.pop_back();
-    }
-
     vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
-        myset s(wordList.begin(),wordList.end());
+        unordered_set<string> wordSet(wordList.begin(), wordList.end());
         vector<vector<string>> res;
-        mymap prev;
-        myset should_remove;
-        PII q; 
-        vector<string> path;
-        int layer_ing = 1;
 
-        //如果wordlist中有beginWord，提前删除
-        s.erase(beginWord);
+        if (wordSet.find(endWord) == wordSet.end()) return res;
 
-        q.push({beginWord,1});
-        while(!q.empty()){
-            auto t = q.front();
-            q.pop();
-            
-            string temp = t.x;
-            
-            //当所有最短路径生成后 （这里表示所有最短路径生成后，才会开始拓展endword后面的结点）
-            if(t.x == endWord){
-                //回溯路径
-                trace_back(path,res,prev,t.x,beginWord);
-                return res;
-            }
-            //进入下一层时
-            if(layer_ing < t.y){
-                //删除已经经过的结点
-                for(auto index = should_remove.begin();index != should_remove.end();index++){
-            
-                    s.erase(*index);
+        unordered_map<string, vector<string>> graph; // 记录每个单词的前驱
+        unordered_map<string, int> visited;          // 记录单词最早出现的层数
+        queue<string> q;
 
-                }
-                should_remove.clear();
-                layer_ing = t.y;
-            }
+        q.push(beginWord);
+        visited[beginWord] = 0;
 
-            //完成一个结点的拓展
-            for(int i = 0;i < temp.size();i++){
-                for(char j = 'a' ; j <= 'z';j++){
-                    temp[i] = j;
-                    if(s.find(temp) != s.end()){
-                        //第一次遇到该结点才需要入队
-                        if(should_remove.emplace(temp).y){
-                            //如果再次遇到该结点，无需入队，只需记录前驱
-                            
-                            q.push({temp,t.y+1});
+        bool found = false;
+        int step = 0;
+
+        // ---------- BFS 建图 ----------
+        while (!q.empty() && !found) {
+            int sz = q.size();
+            ++step;
+            unordered_set<string> localVisited; // 本轮新加入的词
+
+            for (int i = 0; i < sz; ++i) {
+                string word = q.front(); q.pop();
+                string original = word;
+
+                for (int j = 0; j < word.size(); ++j) {
+                    char old = word[j];
+                    for (char c = 'a'; c <= 'z'; ++c) {
+                        if (c == old) continue;
+                        word[j] = c;
+                        if (wordSet.find(word) != wordSet.end()) {
+                            // 只在第一次遇到该单词时加入队列（最短路径）
+                            if (visited.find(word) == visited.end()) {
+                                localVisited.insert(word);
+                                q.push(word);
+                                visited[word] = step;
+                                graph[word].push_back(original);
+                            } else if (visited[word] == step) {
+                                graph[word].push_back(original); // 同一层允许多个前驱
+                            }
+                            if (word == endWord) found = true;
                         }
-                        //记录前驱,      （直接使用prev[temp]会默认插入一个空vector<string>）
-                        prev[temp].push_back(t.x) ;
                     }
-                    temp = t.x; 
-                        
+                    word[j] = old;
                 }
             }
 
-            
-
-
-            
+            // 加入本层访问的单词
+            for (const string& w : localVisited) {
+                wordSet.erase(w); // 避免重复访问
+            }
         }
+
+        // ---------- DFS 回溯 ----------
+        if (found) {
+            vector<string> path{endWord};
+            dfs(endWord, beginWord, graph, path, res);
+        }
+
         return res;
     }
-};
 
-// 作者：Frosty Diffie9wJ
-// 链接：https://leetcode.cn/problems/word-ladder-ii/solutions/3719449/bfshui-su-by-frosty-diffie9wj-w7u6/
-// 来源：力扣（LeetCode）
-// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+private:
+    void dfs(const string& word, const string& beginWord,
+             unordered_map<string, vector<string>>& graph,
+             vector<string>& path, vector<vector<string>>& res) {
+        if (word == beginWord) {
+            vector<string> cur(path.rbegin(), path.rend());
+            res.push_back(cur);
+            return;
+        }
+
+        for (const string& prev : graph[word]) {
+            path.push_back(prev);
+            dfs(prev, beginWord, graph, path, res);
+            path.pop_back(); // 回溯
+        }
+    }
+};
