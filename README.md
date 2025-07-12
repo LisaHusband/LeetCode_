@@ -1,7 +1,6 @@
 ## 🧠 LeetCode High-Performance Solutions
 
-![LeetCode Solved](https://img.shields.io/badge/Solved-123-brightgreen)
-![LeetCode Unsolved](https://img.shields.io/badge/Unsolved-3487-red)
+![LeetCode Solved](https://img.shields.io/badge/Solved-127-brightgreen)
 
 A curated collection of LeetCode problems solved with **high-performance, low-complexity algorithms**, written in C++ and Python.
 Each solution is designed to optimize for **time complexity**, targeting `O(1)` or `O(log n)` wherever algorithmically possible.
