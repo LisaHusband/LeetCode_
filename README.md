@@ -172,6 +172,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0126-word-ladder-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0126-word-ladder-ii) |
 | [0127-word-ladder](https://github.com/LisaHusband/LeetCode_/tree/master/0127-word-ladder) |
 | [0131-palindrome-partitioning](https://github.com/LisaHusband/LeetCode_/tree/master/0131-palindrome-partitioning) |
+| [0132-palindrome-partitioning-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0132-palindrome-partitioning-ii) |
 | [0392-is-subsequence](https://github.com/LisaHusband/LeetCode_/tree/master/0392-is-subsequence) |
 ## Sliding Window
 |  |
@@ -312,6 +313,7 @@ Suggestions, optimizations, and alternative approaches are welcome via issues or
 | [0123-best-time-to-buy-and-sell-stock-iii](https://github.com/LisaHusband/LeetCode_/tree/master/0123-best-time-to-buy-and-sell-stock-iii) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/LisaHusband/LeetCode_/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0131-palindrome-partitioning](https://github.com/LisaHusband/LeetCode_/tree/master/0131-palindrome-partitioning) |
+| [0132-palindrome-partitioning-ii](https://github.com/LisaHusband/LeetCode_/tree/master/0132-palindrome-partitioning-ii) |
 | [0392-is-subsequence](https://github.com/LisaHusband/LeetCode_/tree/master/0392-is-subsequence) |
 ## Greedy
 |  |
